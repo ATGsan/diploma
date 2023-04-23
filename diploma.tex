@@ -1,8 +1,8 @@
 \documentclass[a4paper,14pt]{extarticle}
+\usepackage[english,russian]{babel}
 \usepackage{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -49,24 +49,69 @@
 \renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
 
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2,
+  captionpos=b
+}
+
+
 \begin{document}
 \input{pages/title.tex}% это титульный лист
 \newpage
 \setcounter{page}{2}
 
+\newpage
+\input{pages/abstract_rus}
+\newpage
+\input{pages/abstract_eng}
+\newpage
 {
 	\hypersetup{linkcolor=black}
 	\tableofcontents
 }
 \newpage
-\input{pages/binary_search}
+\input{pages/introduction}
 \newpage
-\input{pages/examples.tex}
+\input{pages/source_review}
+\newpage
+\input{pages/tasks/binary_search}
+\newpage
+\input{pages/tasks/sort_optimisation}
+\newpage
+\input{pages/tasks/thread_priority}
+\newpage
+\input{pages/tasks/sleep_token}
+\newpage
+\input{pages/future_work}
+\newpage
+\input{pages/conclussion}
+\newpage
+\input{pages/examples}
 \newpage 
-
 
 \begin{thebibliography}{0}
 \end{thebibliography}
 	
-	
+\input{pages/appendix}
+
 \end{document}
